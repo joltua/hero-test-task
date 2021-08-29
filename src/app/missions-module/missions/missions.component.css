@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  max-width: 550px;
+  margin: 20px auto;
+  border: 1px solid grey;
+  min-height: 500px;
+  padding: 20px;
+}
+
+a {
+  all: unset;
+}
+
+h3 {
+  text-align: center;
+}
+
+.pending {
+  margin-bottom: 10px;
+}
+
+.tabs {
+  margin: 25px 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tabs > a {
+  cursor: pointer;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: all ease 0.3s;
+}
+
+.tabs > a:hover {
+  color: grey;
+}
+
+.active-tab {
+  border-bottom: 1px solid grey;
+}

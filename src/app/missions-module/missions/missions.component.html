@@ -1,0 +1,30 @@
+<div class="missions-card">
+  <h3>Missions</h3>
+
+  <div class="pending">Pending: {{missionService.pendingQuantity$ | async}}</div>
+
+  <div class="completed">Completed: {{missionService.completedQuantity$ | async}}</div>
+
+  <div class="missions-list">
+    <div class="tabs">
+      <a
+        [routerLink]="'pending'"
+        (click)="activeTab = 'pending'"
+        [class.active-tab]="activeTab === 'pending'"
+      >
+        Pending Missions
+      </a>
+      <a
+        [routerLink]="'completed'"
+        (click)="activeTab = 'completed'"
+        [class.active-tab]="activeTab === 'completed'"
+      >
+        Completed Missions
+      </a>
+    </div>
+
+    <div class="mission-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

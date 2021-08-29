@@ -1,0 +1,26 @@
+<ng-container *ngFor="let mission of (missionService.getMissions() | async)">
+  <div *ngIf="
+          (missionStatus === 'pending' && !mission.completed)
+           || (missionStatus === 'completed' && mission.completed)"
+       class="mission-container"
+  >
+    <div class="title">Title: {{mission.title}}</div>
+
+    <div class="time" *ngIf="mission.completed">Completion time: {{mission.timeOfCompletion | date:'short'}}</div>
+
+    <ng-container *ngIf="!mission.completed">
+      <div class="description">Description: {{mission.description}}</div>
+
+      <div>
+        <select *ngIf="heroes$ | async as heroes">
+          <option *ngFor="let hero of heroes">{{hero.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <button (click)="missionService.completeMission(mission.id)">Complete</button>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>
+
