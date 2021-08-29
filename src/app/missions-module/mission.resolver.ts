@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class MissionResolver implements Resolve<MissionInterface[]> {
   constructor(private missionService: MissionService) {}
 
-  // It needs in order to start fetching mission before component will completely loaded
+  // It needs in order to start fetching missions before component will completely loaded
 
   resolve(
     route: ActivatedRouteSnapshot,
